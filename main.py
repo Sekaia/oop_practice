@@ -1,16 +1,17 @@
 class Item:
+    def __init__(self, name, price, quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
     def calculate_total_price(self, x, y):
         return x * y
+    def __str__(self):
+        return f"{self.name}: ${str(self.price)} x{str(self.quantity)} |  Total: ${self.calculate_total_price(self.price,self.quantity)}"
 
 
-item1 = Item()
-item1.name = "Phone"
-item1.price = 100
-item1.quantity = 5
-print(item1.calculate_total_price(item1.price, item1.quantity))
+item1 = Item("Laptop", 1000, 3)
 
-item2 = Item()
-item2.name = "Phone"
-item2.price = 100
-item2.quantity = 10
-print(item2.calculate_total_price(item2.price, item2.quantity))
+item2 = Item("Phone", 100, 20)
+
+print(item1)
+print(item2)
