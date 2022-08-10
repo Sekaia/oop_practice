@@ -15,8 +15,8 @@ class Item:
         # Actions to execute
         Item.all.append(self)
 
-    def __str__(self):
-        return self.name
+    def __repr__(self):
+        return f"Item('{self.name}', {self.price}, {self.quantity})"
 
     def calculate_total_price(self):
         return self.price * self.quantity
@@ -31,5 +31,4 @@ item3 = Item("Cable", 10, 5)
 item4 = Item("Mouse", 50, 5)
 item5 = Item("Keyboard", 75, 5)
 
-for instance in Item.all:
-    print(instance.name)
+print(Item.all)
